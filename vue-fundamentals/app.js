@@ -7,12 +7,11 @@ const vm = Vue.createApp({
       url : 'https://google.com',
       raw_url : '<a href="https://bing.com" target="_blank">Google</a>',
       age: 20,
+      isPurple: false,
+      textColor: ''
     }
   },
   methods: {
-    fullName() {
-      return ` ${this.firstName} ${this.middleName} ${this.lastName.toUpperCase()} `
-    },
     increament() {
       this.age++;
     },
@@ -22,6 +21,23 @@ const vm = Vue.createApp({
     },
     updateMiddleName(e) {
       this.middleName = e.target.value;
+    }
+  },
+  computed: {
+    fullName() {
+      return ` ${this.firstName} ${this.middleName} ${this.lastName.toUpperCase()} `
+    },
+    bgPurple() {
+      return {
+        purple: this.isPurple
+      }
+    }
+  },
+  watch: {
+    age(newval, oldval) {
+      setTimeout(() => {
+        this.age = 20;
+      }, 3000);
     }
   }
 }).mount('#app');

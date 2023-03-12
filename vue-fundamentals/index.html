@@ -6,10 +6,17 @@
   </head>
   <body>
     <div id="app" v-cloak>
-      <p>my name is {{ fullName() }}</p>
+      <p>my name is {{ fullName }}</p>
       <a :href="url" target="_blank">Google</a>
       <p v-html="raw_url"></p>
       <p>{{ typeof age }}</p>
+      <input type="checkbox" id="purple" v-model="isPurple">
+      <label for="purple">purple</label>
+      <select name="text-color" title="text-color" v-model="textColor">
+        <option value="">white</option>
+        <option value="text-blue">blue</option>
+        <option value="text-red">red</option>
+      </select>
       <hr>
       <label for="firstName">firstName</label>
       <input type="text" v-model.lazy.trim="firstName" id="firstName" />
@@ -19,7 +26,7 @@
       <input type="text" id="age" v-model.number="age">
       <label for="lastName">lastName</label>
       <input type="text" v-bind:value="lastName" @input.prevent="updateLastName('input event trigger', $event)" id="lastName" />
-      <button type="button" v-on:click="increament">Increament</button>
+      <button type="button" v-on:click="increament" :class="[bgPurple, textColor]">Increament</button>
       <button type="button" @click="age--">Decreament</button>
     </div>
 
