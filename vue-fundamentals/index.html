@@ -22,6 +22,19 @@
       </label>
 
       <hr />
+      <p v-if="mode === 1">v-if</p>
+      <template v-else-if="mode === 2">
+        <h3>dkjfek</h3>
+        <p>v-else-if</p>
+      </template>
+
+      <p v-else >v-else</p>
+      <select title="conditon" v-model.number="mode">
+        <option value="1">v-if</option>
+        <option value="2">v-else-if</option>
+        <option value="3">v-else</option>
+      </select>
+      <hr />
       <label for="firstName">firstName</label>
       <input type="text" v-model.lazy.trim="firstName" id="firstName" />
       <label for="middleName">middleName</label>
