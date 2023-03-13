@@ -10,24 +10,45 @@
       <a :href="url" target="_blank">Google</a>
       <p v-html="raw_url"></p>
       <p>{{ typeof age }}</p>
-      <input type="checkbox" id="purple" v-model="isPurple">
+      <input type="checkbox" id="purple" v-model="isPurple" />
       <label for="purple">purple</label>
       <select name="text-color" title="text-color" v-model="textColor">
         <option value="">white</option>
         <option value="text-blue">blue</option>
         <option value="text-red">red</option>
       </select>
-      <hr>
+      <label>circleSize
+        <input type="number" v-model="size"/>
+      </label>
+
+      <hr />
       <label for="firstName">firstName</label>
       <input type="text" v-model.lazy.trim="firstName" id="firstName" />
       <label for="middleName">middleName</label>
-      <input type="text" :value="middleName" @keyup.enter.prevent="updateMiddleName" id="middleName" />
+      <input
+        type="text"
+        :value="middleName"
+        @keyup.enter.prevent="updateMiddleName"
+        id="middleName"
+      />
       <label for="age">age</label>
-      <input type="text" id="age" v-model.number="age">
+      <input type="text" id="age" v-model.number="age" />
       <label for="lastName">lastName</label>
-      <input type="text" v-bind:value="lastName" @input.prevent="updateLastName('input event trigger', $event)" id="lastName" />
-      <button type="button" v-on:click="increament" :class="[bgPurple, textColor]">Increament</button>
+      <input
+        type="text"
+        v-bind:value="lastName"
+        @input.prevent="updateLastName('input event trigger', $event)"
+        id="lastName"
+      />
+      <button
+        type="button"
+        v-on:click="increament"
+      >
+        Increament
+      </button>
       <button type="button" @click="age--">Decreament</button>
+
+      <div class="circle" :class="[bgPurple, textColor]" :style="circleInline">circle</div>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

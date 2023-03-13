@@ -11,6 +11,16 @@ input[type="text"] {
   display: none;
 }
 
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: black;
+  text-align: center;
+  color: #fff;
+}
+
 .purple {
   background-color: purple;
 }

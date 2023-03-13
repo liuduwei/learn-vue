@@ -8,7 +8,8 @@ const vm = Vue.createApp({
       raw_url : '<a href="https://bing.com" target="_blank">Google</a>',
       age: 20,
       isPurple: false,
-      textColor: ''
+      textColor: '',
+      size : 150,
     }
   },
   methods: {
@@ -31,6 +32,18 @@ const vm = Vue.createApp({
       return {
         purple: this.isPurple
       }
+    },
+    circleInline() {
+      return [
+        {
+          width: `${this.size}px`,
+          height: `${this.size}px`,
+          'line-height' : `${this.size}px`,
+        }, 
+        {
+          transform: 'rotate(30deg)',
+        }
+      ]
     }
   },
   watch: {
