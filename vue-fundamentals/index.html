@@ -35,6 +35,19 @@
         <option value="3">v-else</option>
       </select>
       <hr />
+      <ul>
+        <li v-for="(bird, index) in birds" :key="bird">
+          {{ bird }} - {{ index }}
+        </li>
+      </ul>
+      <ul>
+        <li v-for="person in people">
+          <p v-for="(value, key, index) in person">
+            {{value}} - {{key}} - {{index}}
+          </p>
+        </li>
+      </ul>
+      <hr />
       <label for="firstName">firstName</label>
       <input type="text" v-model.lazy.trim="firstName" id="firstName" />
       <label for="middleName">middleName</label>
